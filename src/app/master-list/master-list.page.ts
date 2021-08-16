@@ -30,7 +30,12 @@ export class MasterListPage implements OnInit {
   }
 
   openFilmDetail(film: SwapiFilm) {
-    this.router.navigate(['/film-detail', {id: film.episode_id}]);
+    console.log('Open details of', film.title);
+
+    // Since there is a bug with the API, we should get the id from the url field
+    const episodeId = film.url.substr(film.url.length - 2, 1);
+
+    this.router.navigate(['/film-detail', {id: episodeId}]);
   }
 
 }
