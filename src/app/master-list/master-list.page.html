@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Master List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let film of films; let i = index" (click)="openFilmDetail(film)">
+    <img src="../../assets/1200px-Star_Wars_Logo.svg.png" alt="ion" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ film.release_date }}</ion-card-subtitle>
+      <ion-card-title>{{ film.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ film.opening_crawl | slice: 0:200 }}...
+    </ion-card-content>
+  </ion-card>
+</ion-content>
