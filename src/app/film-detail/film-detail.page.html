@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Film Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="film">
+    <img src="../../assets/1200px-Star_Wars_Logo.svg.png" alt="ion" />
+    <ion-card-header>
+      <ion-card-subtitle>{{ film.release_date }}</ion-card-subtitle>
+      <ion-card-title>{{ film.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ film.opening_crawl }}
+    </ion-card-content>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Director: {{ film.director }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Producer: {{ film.producer }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-button type="submit" color="primary" expand="block" (click)="goBack()">Go Back</ion-button>
+</ion-content>

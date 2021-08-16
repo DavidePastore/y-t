@@ -23,7 +23,6 @@ export class MasterListPage implements OnInit {
     });
     await loading.present();
     this.swapiService.getFilms()
-      // clone the data object, using its known Config shape
       .subscribe((data: SwapiFilms) => {
         this.films = data.results;
         loading.dismiss();

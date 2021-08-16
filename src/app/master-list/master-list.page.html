@@ -1,5 +1,8 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Master List</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -8,7 +11,6 @@
   <ion-card *ngFor="let film of films; let i = index" (click)="openFilmDetail(film)">
     <img src="../../assets/1200px-Star_Wars_Logo.svg.png" alt="ion" />
     <ion-card-header>
-      <ion-card-subtitle>{{ film.release_date }}</ion-card-subtitle>
       <ion-card-title>{{ film.title }}</ion-card-title>
     </ion-card-header>
 
